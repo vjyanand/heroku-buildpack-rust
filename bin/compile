@@ -78,6 +78,23 @@ EOF
     exit 1
 fi
 
+apk add --update --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main --virtual .build-deps \
+            build-base \
+            pkgconfig \
+            glib-dev \
+            expat-dev \
+            tiff-dev \
+            libjpeg-turbo-dev \
+            libexif-dev \
+            giflib-dev \
+            librsvg-dev \
+            lcms2-dev \
+            libpng-dev \
+            orc-dev \
+            libwebp-dev \
+            libheif-dev \
+            libimagequant-dev
+            
 # Record our Rust build environment configuration in an export file, in
 # case another buildpack needs it to build Ruby gems that use Rust or
 # something like that.
